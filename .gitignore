@@ -1,0 +1,3 @@
+/.idea
+/.docker/.dist/*
+!/.docker/.dist/.gitkeep
