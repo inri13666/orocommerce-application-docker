@@ -1,0 +1,11 @@
+CONSOLE=`pwd`/app/console
+
+if [ ! -f "$CONSOLE" ]; then
+    CONSOLE=`pwd`/bin/console
+fi
+
+if [ ! -f $CONSOLE ]; then
+    echo "Symfony Console not found!"
+else
+    php "$CONSOLE" $*
+fi

@@ -1,0 +1,13 @@
+--- vendor/symfony/symfony/src/Symfony/Component/Intl/Locale.php
++++ vendor/symfony/symfony/src/Symfony/Component/Intl/Locale.php
+@@ -85,7 +85,9 @@
+ 
+             array_pop($localeSubTags);
+ 
+-            return locale_compose($localeSubTags);
++            $fallback = locale_compose($localeSubTags);
++
++            return false !== $fallback ? $fallback : null;
+         }
+ 
+         if (false !== $pos = strrpos($locale, '_')) {
